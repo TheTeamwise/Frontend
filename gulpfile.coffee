@@ -45,7 +45,7 @@ gulp.task "fonts", ->
   # $.bowerFiles()
   gulp.src("app/bower_components/font-awesome/fonts/**.*{eot,svg,ttf,woff,otf}")
     # .pipe($.flatten())
-    .pipe(gulp.dest("dist/fonts"))
+    .pipe(gulp.dest("dist/bower_components/font-awesome/fonts/"))
     .pipe $.size()
 
 gulp.task "clean", ->
