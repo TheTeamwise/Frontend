@@ -2,6 +2,7 @@
 
 # Require
 gulp = require("gulp")
+gutil = require("gutil")
 $ = require("gulp-load-plugins")()
 http = require("http")
 
