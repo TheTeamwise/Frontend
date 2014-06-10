@@ -1,0 +1,20 @@
+.navbar-teamwise {
+  border-bottom-color: $gray-lighter;
+  margin-bottom: 0;
+
+  .navbar-nav > li > a {
+    color: $gray-light;
+
+    &:hover {
+      color: $brand-primary;
+      background-color: transparent;
+    }
+  }
+
+  .nav .open {
+    > a {
+      color: $brand-primary;
+      background-color: transparent;
+    }
+  }
+}

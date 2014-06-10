@@ -1,0 +1,19 @@
+.dropdown-menu {
+  box-shadow: none;
+  border-color: $gray-lighter;
+
+  > li {
+    > a {
+      color: $gray-light;
+
+      &:hover {
+        background-color: transparent;
+        color: #111;
+      }
+    }
+  }
+
+  .divider {
+    background-color: $gray-lighter;
+  }
+}

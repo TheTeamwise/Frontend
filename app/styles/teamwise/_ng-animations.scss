@@ -1,0 +1,16 @@
+.fadeInRight {
+  &.ng-enter {
+    animation: fadeInRight 0.5s;
+  }
+}
+
+.fadeInUp {
+  &.ng-enter {
+    animation: fadeInUp 0.5s;
+  }
+}
+
+[ui-view] {
+  @extend .fadeInUp;
+  overflow: hidden;
+}

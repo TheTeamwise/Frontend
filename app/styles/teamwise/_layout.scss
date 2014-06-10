@@ -1,0 +1,66 @@
+.sidebar {
+  @extend .col-sm-2;
+}
+
+.content {
+  @extend .col-sm-10;
+}
+
+.jumbotron {
+  //background: url(../images/landing/bg.jpg) no-repeat;
+
+  .container {
+    text-align: center;
+
+    h1, p {
+      //text-shadow: 1px 1px 1px #000;
+      //color: #fff;
+
+      a {
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+.error {
+  @include link-with-border();
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 300;
+  padding: 30px;
+  background: #f9f9f9;
+}
+
+.features {
+  .container {
+    .row {
+      p {
+        border-bottom: 1px solid $border;
+        padding-bottom: 20px;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.reviews {
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgba(236, 240, 241, 1.0);
+}
+
+.footer {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}

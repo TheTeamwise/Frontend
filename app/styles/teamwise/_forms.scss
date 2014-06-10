@@ -1,0 +1,26 @@
+.form-control {
+  box-shadow: none;
+
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-actions {
+  margin-top: .5em;
+}
+
+.form-actions-static {
+  margin-top: 5px;
+}
+
+header {
+  .form-control {
+    margin-top: 17px;
+  }
+}
+
+input[type=search] {
+  border-radius: 20px;
+}

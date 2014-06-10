@@ -1,0 +1,24 @@
+@mixin link-with-border($important-border: "false") {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      @if $important-border == "true" {
+        border-bottom: 1px solid !important;
+      } @else {
+        border-bottom: 1px solid;
+      }
+    }
+  }
+}
+
+
+@mixin link-without-border() {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 0;
+    }
+  }
+}

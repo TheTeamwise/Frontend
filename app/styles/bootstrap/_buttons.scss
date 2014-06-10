@@ -1,0 +1,22 @@
+.btn {
+  border-radius: 20px;
+
+  &:focus,
+  &:active:focus,
+  &.active:focus {
+    outline: none;
+  }
+
+  &:active,
+  &.active {
+    box-shadow: none;
+  }
+}
+
+.btn-default {
+  @include button-transparent-variant("#fff");
+}
+
+.btn-primary {
+  @include button-transparent-variant($brand-primary);
+}

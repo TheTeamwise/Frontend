@@ -1,0 +1,56 @@
+.projects {
+  .project {
+    @include link-with-border();
+    transition: all .3s;
+
+    &:hover{
+      box-shadow: 0 3px 10px $border;
+    }
+
+    .panel-footer {
+      p {
+        font-size: 12px;
+
+        span {
+          display: block;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.teams {
+  .team {
+    @include link-with-border();
+    transition: all .3s;
+
+    &:hover{
+      box-shadow: 0 3px 10px $border;
+    }
+
+    .panel-footer {
+      p {
+        font-size: 12px;
+
+        span {
+          display: block;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+.team-info {
+  p {
+    font-size: 14px;
+    text-align: center;
+
+    span {
+      display: block;
+      font-size: 22px;
+    }
+  }
+}

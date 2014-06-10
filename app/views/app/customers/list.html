@@ -1,0 +1,61 @@
+<section ui-view>
+  <header class="row">
+    <h3 class="col-sm-6">Customers</h3>
+    <div class="col-sm-6">
+      <input type="search" class="form-control" ng-model="filter.$" placeholder="Search customer (not implemented yet)">
+    </div>
+  </header>
+
+<!--   <section role="stats">
+    <h4>Statistics</h4>
+  </section>
+ -->
+  <section role="recent">
+    <div class="table-responsive">
+      <table class="table" template-pagination="custom/pager" ng-table="customersTable">
+        <tr ng-repeat="customer in $data">
+          <td class="col-sm-2" data-title="'ID'">
+            <a href="" ui-sref="app.customers.details({id: customer.id})">
+              <span ng-if="!customer.email">
+                {{customer.id}}
+              </span>
+              <span ng-if="customer.email">
+                {{customer.email}}
+              </span>
+            </a>
+          </td>
+          <td class="col-sm-1" data-title="'Referrals'">
+            {{customer.referrals | number}}
+          </td>
+          <td class="col-sm-3" data-title="'Followers'">
+            <span ng-repeat="social in customer.socials">
+              <a href="https://{{social.network}}.com/{{social.url}}" title="{{social.name}}">
+                <i class="fa fa-{{social.network}}"></i>
+              </a>
+              {{social.followers | number}}
+            </span>
+          </td>
+        </tr>
+      </table>
+      <script type="text/ng-template" id="custom/pager">
+        <div class="text-center">
+          <ul class="pagination">
+            <!-- <li>
+              <a href="">
+                <i class="fa fa-angle-left"></i>  
+              </a>
+            </li> -->
+            <li ng-repeat="page in pages" ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}" ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">
+              <a href="" ng-click="params.page(page.number)">{{page.number}}</a>
+            </li>
+         <!--   <li>
+              <a href="">
+                <i class="fa fa-angle-right"></i>  
+              </a>
+            </li> -->
+          </ul>
+        </div>
+      </script>
+    </div> <!-- .table-responsive -->
+  </section>
+</section>

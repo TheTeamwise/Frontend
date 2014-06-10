@@ -1,0 +1,96 @@
+<section ng-if="team">
+  <header class="row">
+    <h3 class="col-xs-9">
+      <span>
+        {{team.meta.title}} Dashboard
+      </span>
+    <h3 class="col-xs-3 text-right">
+      <a ui-sref="app.team.settings"><i class="fa fa-cog"></i></a>
+    </h3>
+  </header>
+
+  <section class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-12">
+              Сводка команды
+            </div>
+          </div>
+        </div>
+        <div class="panel-body row">
+          <div class="col-xs-12">
+            <div class="team-info row">
+              <div class="col-xs-3">
+                <p><a href="#/app/team/projects"><span>{{team.meta.projects}}</span> проекта</a></p>
+              </div>
+
+              <div class="col-xs-3">
+                <p><a href="#/app/team/tickets"><span>{{team.meta.tasks}}</span> задач</a></p>
+              </div>
+
+              <div class="col-xs-3">
+                <p><a href="#/app/team/members"><span>{{team.meta.members}}</span> участника</a></p>
+              </div>
+
+              <div class="col-xs-3">
+                <p><a href="#/app/team/groups"><span>{{team.meta.groups}}</span> группы</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="col-xs-12">
+      <header class="row">
+        <h3 class="col-xs-9">
+          <span>
+            Проекты
+          </span>
+        </h3>
+      </header>
+
+      <section class="row">
+        <div class="col-xs-12">
+          <div class="projects row">
+            <div class="col-sm-6 col-md-4">
+              <div class="panel panel-default project">
+                <div class="panel-body text-center">
+                  <h3><a ui-sref="app.project.details">Web</a></h3>
+                </div>
+                <div class="panel-footer text-center">
+                  <p><span>27</span> задач</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+              <div class="panel panel-default project">
+                <div class="panel-body text-center">
+                  <h3><a ui-sref="app.project.details">iOS</a></h3>
+                </div>
+                <div class="panel-footer text-center">
+                  <p><span>10</span> задач</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</section>
+
+<section ng-if="!team">
+  <header class="row">
+    <div class="col-xs-12">
+      <div class="error">
+        <p>Загрузка...</p>
+      </div>
+    </div>
+  </header>
+</section>

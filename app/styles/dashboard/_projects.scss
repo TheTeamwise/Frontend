@@ -1,0 +1,78 @@
+.project {
+  h3 span {
+    @include link-with-border();
+  }
+
+  .updates {
+    margin-left: 5px;
+
+    .item {
+      @include link-with-border();
+      margin-bottom: 10px;
+      border-bottom: 1px solid $border;
+
+      .date {
+        color: #999;
+      }
+    }
+  }
+}
+
+.tasks {
+  h3 span {
+    @include link-with-border();
+  }
+
+  table {
+    @include link-with-border();
+
+    tbody {
+      tr {
+        &.highest-priority {
+          background: $highest-priority;
+
+          &:hover {
+            //background: lighten($highest-priority, 10%);
+          }
+        }
+
+        &.high-priority {
+          background: $high-priority;
+
+          &:hover {
+            //background: lighten($high-priority, 10%);
+          }
+        }
+
+        &.low-priority {
+          background: $low-priority;
+
+          &:hover {
+            //background: lighten($low-priority, 10%);
+          }
+        }
+
+        &.lowest-priority {
+          background: $lowest-priority;
+
+          &:hover {
+            //background: lighten($lowest-priority, 10%);
+          }
+        }
+
+
+        &:hover {
+          background: #f9f9f9;
+
+          td {
+            @include link-without-border();
+
+            .rowlink-skip {
+              @include link-with-border($important-border: "false");
+            }
+          }
+        }
+      }
+    }
+  }
+}

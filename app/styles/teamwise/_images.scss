@@ -1,0 +1,10 @@
+.user-avatar {
+  @extend .img-circle;
+  max-height: 40px;
+}
+
+.form-control-static {
+  .user-avatar {
+    margin-top: -20px;
+  }
+}

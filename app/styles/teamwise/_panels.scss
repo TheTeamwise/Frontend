@@ -1,0 +1,100 @@
+.panel-social {
+  @extend .panel;
+
+  box-shadow: none;
+  border-radius: 0;
+  margin-top: 50px;
+
+  .panel-heading {
+    text-align: center;
+    color: #fff;
+    font-weight: 200;
+
+    border-radius: 0;
+
+    position: relative;
+
+    &:before {
+      @extend .fa-fw;
+
+      position: absolute;
+      right: 0;
+      top: -45px;
+
+      font-family: "FontAwesome";
+      font-size: 35px;
+      color: white;
+    }
+
+    p {
+      margin-bottom: 0;
+      margin-top: .5em;
+    }
+
+    a {
+      color: #fff;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom-color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .panel-image {
+    max-height: 75px;
+    border-radius: 50%;
+    margin-top: -50px;
+  }
+
+  .panel-body {
+    text-align: center;
+    font-weight: 200;
+
+    h3 {
+      margin-top: 0;
+      font-weight: 100;
+    }
+
+    a {
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .panel-footer {
+    background-color: transparent;
+  }
+}
+
+.panel-facebook {
+  @include make-social-panel($brand-facebook, "\f09a");
+}
+
+.panel-twitter {
+  @include make-social-panel($brand-twitter, "\f099");
+
+  .panel-heading {
+    background-color: $brand-twitter;
+  }
+}
+
+.panel-vk {
+  @include make-social-panel($brand-vk, "\f189");
+
+  .panel-heading {
+    background-color: $brand-vk;
+  }
+}
+
+.panel-gravatar {
+  @include make-social-panel($brand-primary, null);
+
+  .panel-heading {
+    background-color: $brand-primary;
+  }
+}

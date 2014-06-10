@@ -1,0 +1,192 @@
+<section ui-view>
+  <header class="row">
+    <h3 class="col-xs-6">
+      <span ng-if="customer.id && !customer.email">
+        {{customer.id}}
+      </span>
+      <span ng-if="customer.email">
+        {{customer.email}}
+      </span>
+<!--       <small class="customer-status">
+        <i class="fa fa-circle" title="offline"></i>
+      </small>
+ -->    </h3>
+    <h3 class="col-xs-6 text-right">
+      {{customer.referrals | number}} referrals
+    </h3>
+  </header>
+
+  <section role="status" class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-status">
+        <div class="panel-body row">
+          <div class="col-xs-10">
+            Opened <a href="http://www.amazon.com/gp/product/B00CX5P8FC/" target="_blank">Amazon Fire TV – Streaming Media Player – Shop Now</a>
+          </div>
+          <div class="col-xs-2 text-muted text-right">
+            {{ 1288323623006 | date:'h:mm a'}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section role="information" class="row">
+    <div class="col-sm-6">
+      <h3>Information</h3>
+      <dl class="dl-horizontal" ng-if="!customer.email">
+        <dt>
+          ID
+        </dt>
+        <dd>
+          {{customer.id}}
+        </dd>
+      </dl>
+      <dl class="dl-horizontal" ng-if="customer.email">
+        <dt>
+          E-mail
+        </dt>
+        <dd>
+          {{customer.email}}
+        </dd>
+      </dl>
+      <dl class="dl-horizontal">
+        <dt>
+          Gender
+        </dt>
+        <dd>
+          Male
+        </dd>
+      </dl>
+      <dl class="dl-horizontal">
+        <dt>
+          Location
+        </dt>
+        <dd>
+          Hong Kong, Hong Kong (+7 GMT)
+        </dd>
+      </dl>
+      </div>
+    <div class="col-sm-6">
+      <h3>Interactions</h3>
+      <dl class="dl-horizontal">
+        <dt>
+          <i class="fa fa-facebook text-facebook"></i> <a href="https://fb.com/Starbucks">Starbucks</a>
+        </dt>
+        <dd class="text-danger">
+          <i class="fa fa-times"></i> not liked
+        </dd>
+      </dl>
+      <dl class="dl-horizontal">
+        <dt>
+          <i class="fa fa-twitter text-twitter"></i> <a href="https://twitter.com/Starbucks">Starbucks</a>
+        </dt>
+        <dd class="text-success">
+          <i class="fa fa-check"></i> follows
+        </dd>
+      </dl>
+      <dl class="dl-horizontal">
+        <dt>
+          <i class="fa fa-vk text-vk"></i> <a href="https://vk.com/Starbucks">Starbucks</a>
+        </dt>
+        <dd class="text-danger">
+          <i class="fa fa-times"></i> not liked
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <section role="counts" class="row">
+    <div class="stats-block">
+      <div class="panel panel-social panel-gravatar">
+        <div class="panel-heading">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/t1.0-1/s100x100/521802_410429179027666_1997546043_s.jpg" class="panel-image" alt="">
+
+          <p>
+            {{customer.email}}
+          </p>
+        </div>
+        <div class="panel-body">
+          <h3>
+            {{customer.referrals | number}}
+          </h3>
+          referrals
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-lg btn-block btn-link" ng-click="useNotificationMethod('email')" ng-class="{ 'active': notification_method == 'email' }">
+            Send mail
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="stats-block" ng-repeat="social in customer.socials">
+      <div class="panel-social panel-{{social.network}}">
+        <div class="panel-heading">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/t1.0-1/s100x100/521802_410429179027666_1997546043_s.jpg" class="panel-image" alt="">
+
+          <p>
+            <a href="https://{{social.network}}.com/{{social.url}}">{{social.name}}</a>
+          </p>
+        </div>
+        <div class="panel-body">
+          <h3>
+            <a href="https://{{social.network}}.com/{{social.url}}">
+              {{social.followers | number}}
+            </a>
+          </h3>
+          followers
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-lg btn-block btn-link" ng-click="useNotificationMethod('{{social.network}}')" ng-class="{ 'active': notification_method == 'facebook' }">
+            Send notification
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section role="controls" class="row">
+    <div class="col-xs-12">
+      <section role="send-notification" class="fadeInUp" ng-if="notification_method">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4>Message</h4>
+            <textarea class="form-control" rows="3" ng-model="notification_text" ng-maxlength="140"></textarea>
+            <div class="form-actions row">
+              <div class="col-xs-6">
+                <p class="form-actions-static text-muted">{{140 - notification_text.length}}</p>
+              </div>
+              <div class="col-xs-6 text-right">
+                <button class="btn btn-primary">Send</button>
+              </div>
+            </div>
+          </div>
+
+<!--           <div class="col-sm-6" ng-switch on="notification_method">
+            <h4>Preview</h4>
+
+            <div class="fadeInRight" ng-switch-when="facebook">
+              facebook preview
+            </div>
+            <div class="fadeInRight" ng-switch-when="twitter">
+              twitter preview
+            </div>
+            <div class="fadeInRight" ng-switch-when="vk">
+              vk preview
+            </div>
+            <div class="fadeInRight" ng-switch-when="email">
+              email preview
+            </div>
+          </div>
+        </div>
+ -->      </section>
+    </div>
+  </section>
+
+<!--   <section role="stats" class="row">
+    <div class="col-xs-12">
+      <h3>Stats</h3>
+      User stats, for future. How many clicks, when and other information.
+    </div>
+  </section>
+ --></section>

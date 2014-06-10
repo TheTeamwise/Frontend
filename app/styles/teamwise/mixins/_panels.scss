@@ -1,0 +1,26 @@
+@mixin make-social-panel($color, $icon) {
+  border-color: $color;
+
+  &, a, .btn-link {
+    color: $color;
+  }
+
+  a {
+    &:hover {
+      border-bottom-color: $color;
+    }
+  }
+
+  .panel-heading {
+    background-color: $color;
+
+    &:before {
+      content: $icon;
+      color: $color;
+    }
+  }
+
+  .panel-footer {
+    border-top-color: $color;
+  }
+}

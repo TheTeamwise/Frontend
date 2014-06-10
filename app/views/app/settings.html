@@ -1,0 +1,111 @@
+<section ui-view>
+  <header class="row">
+    <h3 class="col-sm-12">
+      Settings
+    </h3>
+  </header>
+
+  <div class="row">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="app-name" class="col-sm-3 control-label">Application name</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="app-name" value="{{app.name}}" placeholder="Application name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="app-url" class="col-sm-3 control-label">Application url</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="app-url" value="{{app.url}}" placeholder="http://">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="api-open" class="col-sm-3 control-label">API Open Key</label>
+        <div class="col-sm-5">
+          <div class="input-group">
+            <input type="text" class="form-control" id="api-open" placeholder="API Open Key">
+            <a href="" class="input-group-addon">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="api-secret" class="col-sm-3 control-label">API Secret Key</label>
+        <div class="col-sm-5">
+          <div class="input-group">
+          <input type="text" class="form-control" id="api-secret" placeholder="API Secret Key">
+            <a href="" class="input-group-addon">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <header class="row">
+    <h3 class="col-sm-12">
+      Socials
+    </h3>
+  </header>
+  <div class="row">
+    <form class="form-horizontal">
+      <div class="form-group" ng-repeat="social in app.social">
+        <label for="social-{{social.network}}" class="col-sm-3 control-label">{{social.network}}</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="social-{{social.network}}" value="http://{{social.network}}.com/{{social.id}}">
+        </div>
+      </div>
+    </form>
+  </div>
+<!--   <div class="row">
+    <div class="col-sm-3 col-sm-offset-1">
+      <div class="panel panel-social panel-facebook">
+        <div class="panel-heading">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/t1.0-1/c2.0.100.100/p100x100/960181_10151919982378057_997575693_a.jpg" class="panel-image" alt="">
+        </div>
+        <div class="panel-body">
+          <h3>
+            <a href="">
+              {{528491 | number}}
+            </a>
+          </h3>
+          followers
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="panel panel-social panel-twitter">
+        <div class="panel-heading">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/t1.0-1/c2.0.100.100/p100x100/960181_10151919982378057_997575693_a.jpg" class="panel-image" alt="">
+        </div>
+        <div class="panel-body">
+          <h3>
+            <a href="">
+              {{528491 | number}}
+            </a>
+          </h3>
+          followers
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="panel panel-social panel-vk">
+        <div class="panel-heading">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/t1.0-1/c2.0.100.100/p100x100/960181_10151919982378057_997575693_a.jpg" class="panel-image" alt="">
+        </div>
+        <div class="panel-body">
+          <h3>
+            <a href="">
+              {{528491 | number}}
+            </a>
+          </h3>
+          followers
+        </div>
+      </div>
+    </div>
+  </div> -->
+</section>
