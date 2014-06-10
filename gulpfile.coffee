@@ -28,7 +28,7 @@ gulp.task "html", [ "scripts", "styles" ], ->
     css: $.filter(".tmp/scripts/**/*.css")
   }
   gulp.src("app/**/*.html")
-    .pipe($.useref.assets())
+    .pipe($.useref.assets().on("error", gutil.log))
     .pipe(filters.js)
     .pipe($.uglify())
     .pipe(filters.js.restore())
@@ -89,7 +89,7 @@ gulp.task "wiredep", ->
 
 gulp.task "watch", ["connect", "serve"], ->
   server = $.livereload()
-  
+
   # watch for changes
   gulp.watch([
     "app/*.html"
