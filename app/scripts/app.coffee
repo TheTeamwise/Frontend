@@ -97,6 +97,15 @@ app.config ($stateProvider, $urlRouterProvider, $locationProvider, RestangularPr
       "viewNav@app":
         templateUrl: "views/app/project/task_list_nav.html"
 
+  ).state("app.project.tasks.view",
+    url: "/:id"
+    views:
+      "viewDash@app":
+        templateUrl: "views/app/project/task_details.html"
+        controller: "AppProjectTasksListCtrl"
+      "viewNav@app":
+        templateUrl: "views/app/project/task_list_nav.html"
+
   ).state("app.settings",
     url: "/settings"
     templateUrl: "views/app/settings.html"

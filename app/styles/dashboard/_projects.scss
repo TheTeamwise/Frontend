@@ -23,6 +23,32 @@
     @include link-with-border();
   }
 
+  .overview {
+    @include link-with-border();
+  }
+
+  .comments {
+    textarea {
+      resize: none;
+    }
+
+    .media {
+      border-bottom: 1px solid $border;
+      padding-bottom: 10px;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      span {
+        &.date {
+          font-size: 10px !important;
+          display: block;
+        }
+      }
+    }
+  }
+
   table {
     @include link-with-border();
 
