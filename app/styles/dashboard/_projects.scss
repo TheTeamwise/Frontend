@@ -25,6 +25,39 @@
 
   .overview {
     @include link-with-border();
+
+    ul {
+      li {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.5);
+        transition: all .1s;
+
+        &:hover {
+          background: #f9f9f9;
+          cursor: pointer;
+        }
+
+        &.default {
+          background: #f8f8f8;
+          cursor: default;
+        }
+
+        span {
+          color: #000;
+
+          &.label {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .information {
+    .panel-body {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 
   .comments {
@@ -42,8 +75,20 @@
 
       span {
         &.date {
-          font-size: 10px !important;
+          font-size: 12px;
           display: block;
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      .media-body {
+        .media-heading {
+          @include link-with-border();
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 24px;
         }
       }
     }
