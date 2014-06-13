@@ -63,6 +63,10 @@
   .comments {
     textarea {
       resize: none;
+
+      &:focus {
+        border-color: $brand-primary;
+      }
     }
 
     .media {
