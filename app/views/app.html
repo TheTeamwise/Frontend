@@ -4,16 +4,11 @@
     </ul>
     <ul class="nav nav-pills nav-stacked">
       <li>
-        <h3>Основное</h3>
+        <h3>Навигация</h3>
       </li>
       <li ui-sref-active="active">
         <a href="" ui-sref="app">
-          <i class="fa fa-users"></i> Команды
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a href="" ui-sref="app.project">
-          <i class="fa fa-list-alt"></i> Проекты
+          <i class="fa fa-users"></i> Панель
         </a>
       </li>
       <li>
@@ -48,6 +43,42 @@
             <div class="panel-footer text-center">
               <p><span>{{team.members}}</span> участника</p>
               <p><span>{{team.projects}}</span> проектов</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <header class="row">
+      <h3 class="col-sm-12">
+        Ваши проекты
+      </h3>
+    </header>
+
+    <section class="teams">
+      <div class="row">
+      <div class="col-xs-12">
+          <div class="projects row">
+            <div class="col-sm-6 col-md-4">
+              <div class="panel panel-default project">
+                <div class="panel-body text-center">
+                  <h3><a ui-sref="app.project.details">Web</a></h3>
+                </div>
+                <div class="panel-footer text-center">
+                  <p><span>27</span> задач</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+              <div class="panel panel-default project">
+                <div class="panel-body text-center">
+                  <h3><a ui-sref="app.project.details">iOS</a></h3>
+                </div>
+                <div class="panel-footer text-center">
+                  <p><span>10</span> задач</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
