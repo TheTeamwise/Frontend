@@ -13,7 +13,7 @@ app = angular.module('teamwise', [
 
 app.config ($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider, cfpLoadingBarProvider) ->
   # $locationProvider.html5Mode true
-  RestangularProvider.setBaseUrl "http://teamwise.apiary-mock.com/v1/"
+  RestangularProvider.setBaseUrl "http://localhost:3000/api/"
 
   cfpLoadingBarProvider.latencyThreshold = 50
   cfpLoadingBarProvider.includeSpinner = false
