@@ -3,18 +3,33 @@
   margin-bottom: 0;
 
   .navbar-nav > li > a {
-    color: $gray-light;
+    color: $gray;
+    transition: .1s;
 
     &:hover {
-      color: $brand-primary;
-      background-color: transparent;
+      //color: $brand-primary;
+      background-color: $gray-lighter;
     }
   }
-
+  
+  .navbar-nav {
+    margin-left: 10px; 
+  }
+  
   .nav .open {
     > a {
-      color: $brand-primary;
-      background-color: transparent;
+      //color: $brand-primary;
+      background-color: $gray-lighter;
+    }
+  }
+  
+  form[role="search"] {
+    .form-group {
+      margin-bottom: 0;
+      
+      input {
+      
+      } 
     }
   }
 }

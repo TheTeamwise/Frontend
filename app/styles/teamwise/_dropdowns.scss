@@ -4,10 +4,10 @@
 
   > li {
     > a {
-      color: $gray-light;
+      color: $gray;
 
       &:hover {
-        background-color: transparent;
+        background-color: lighter($gray-lighter, 10%);
         color: #111;
       }
     }

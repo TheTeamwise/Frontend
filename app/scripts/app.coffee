@@ -13,6 +13,8 @@ app = angular.module('teamwise', [
 
 app.config ($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider, cfpLoadingBarProvider) ->
   # $locationProvider.html5Mode true
+  #$locationProvider.html5Mode true
+  #$locationProvider.hashPrefix '!'
   RestangularProvider.setBaseUrl "http://localhost:3000/api/"
 
   cfpLoadingBarProvider.latencyThreshold = 50
@@ -70,6 +72,16 @@ app.config ($stateProvider, $urlRouterProvider, $locationProvider, RestangularPr
       "viewNav@app":
         templateUrl: "views/app/teams/team_nav.html"
 
+  ).state("app.team.create",
+    url: "/create"
+    views:
+      "viewDash@app":
+        templateUrl: "views/app/teams/create.html"
+        controller: "AppTeamsCreateCtrl"
+      "viewNav@app":
+        templateUrl: "views/app/teams/create_nav.html"
+
+
   ).state("app.project",
     url: "/projects"
     views:
@@ -88,6 +100,16 @@ app.config ($stateProvider, $urlRouterProvider, $locationProvider, RestangularPr
       "viewNav@app":
         templateUrl: "views/app/project/details_nav.html"
 
+  ).state("app.project.create",
+    url: "/create"
+    views:
+      "viewDash@app":
+        templateUrl: "views/app/project/create.html"
+        controller: "AppProjectCreateCtrl"
+      "viewNav@app":
+        templateUrl: "views/app/project/details_nav.html"
+
+
   ).state("app.project.tasks",
     url: "/tasks"
     views:
@@ -99,6 +121,14 @@ app.config ($stateProvider, $urlRouterProvider, $locationProvider, RestangularPr
 
   ).state("app.project.tasks.view",
     url: "/:id"
+    views:
+      "viewDash@app":
+        templateUrl: "views/app/project/task_details.html"
+        controller: "AppProjectTasksListCtrl"
+      "viewNav@app":
+        templateUrl: "views/app/project/task_list_nav.html"
+  ).state("app.project.tasks.create",
+    url: "/create"
     views:
       "viewDash@app":
         templateUrl: "views/app/project/task_details.html"

@@ -1,0 +1,13 @@
+.updates {
+  margin-left: 5px;
+
+  .item {
+    @include link-with-border();
+    margin-bottom: 10px;
+    border-bottom: 1px solid $border;
+
+    .date {
+      color: #999;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <div class="container">
-  <nav class="sidebar">
+  <nav class="sidebar" style="display: none;">
     <ul class="nav nav-pills nav-stacked" ui-view="viewNav">
     </ul>
     <ul class="nav nav-pills nav-stacked">
@@ -82,6 +82,41 @@
               </div>
             </div>
           </div>
+      </div>
+    </section>
+  </section>
+  
+  <section class="right-sidebar">
+    <header class="row">
+      <h3 class="col-sm-12">
+        Ваши задачи
+      </h3>
+    </header>
+    
+    <section class="row">
+      <div class="col-xs-12">
+        <div class="updates row">
+          <div class="col-xs-12">
+            <div class="item">
+              <p><span class="date">22:10</span> <a ng-href="#/app/team/member">Алексей</a> оставил комментарий к <a ng-href="#/app/team/project/ticket">таску #1</a></p>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="item">
+              <p><span class="date">16:55</span> <a ng-href="#/app/team/member">Олег</a> пометил <a ng-href="#/app/team/project/ticket">таск #1</a> как <span class="label label-success">Done</span></p>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="item">
+              <p><span class="date">15:30</span> <a ng-href="#/app/team/member">Влад</a> пометил <a ng-href="#/app/team/project/ticket">таск #2</a> как <span class="label label-primary">In Progress</span></p>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="item">
+              <p><span class="date">15:10</span> <a ng-href="#/app/team/member">Алексей</a> создал <a ng-href="#/app/team/project/ticket">таск #1</a></p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </section>

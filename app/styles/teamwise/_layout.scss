@@ -3,7 +3,11 @@
 }
 
 .content {
-  @extend .col-sm-10;
+  @extend .col-sm-8;
+}
+
+.right-sidebar {
+  @extend .col-sm-4;
 }
 
 .jumbotron {
